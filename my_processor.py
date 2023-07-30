@@ -1,6 +1,6 @@
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
-model_path = 'path to model directory'  # Replace with the path to the directory where the model is saved
+model_path = 'news_classification_model'  # Replace with the path to the directory where the model is saved
 tokenizer = BertTokenizer.from_pretrained(model_path)
 model = BertForSequenceClassification.from_pretrained(model_path)
 # Set the model to evaluation mode

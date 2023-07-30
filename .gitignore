@@ -1,1 +1,5 @@
 kavida-env
+model.zip
+news_classification_model
+__pycache__
+.DS_Store

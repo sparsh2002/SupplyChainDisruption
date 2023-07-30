@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 from my_processor import evaluate
+from my_function import get_class
 from dotenv import load_dotenv
 import os
 load_dotenv()
-PORT = os.get_env('PORT') 
+PORT = os.getenv('PORT') 
 app = Flask(__name__)
 
 
@@ -15,7 +16,7 @@ def home():
         input_text = request.json['input_text']
         predicted_label , label_probabilities = evaluate(input_text)
         res = {}
-        res['predicted_label'] = predicted_label
+        res['predicted_label'] = get_class(predicted_label)
         res['label_probabilties'] = label_probabilities
         return jsonify(res)
     else:
